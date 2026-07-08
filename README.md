@@ -1,6 +1,3 @@
-Here’s the **combined README in English**, integrating both versions and making it developer‑friendly while documenting the full project structure and methodology:  
-
-```markdown
 # GeoVision-CLIP Cali — Final Project 🌍🛰️
 
 **Estimation of air pollution in Cali, Colombia using multimodal contrastive learning (Sentinel-2 + Sentinel-5P + text) with Sparse Autoencoders on ViT-B/32.**  
