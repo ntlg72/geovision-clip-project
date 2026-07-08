@@ -1,0 +1,13 @@
+estacion,contaminante,transformacion,n,adf_p,kpss_p
+PALMIRA,O3,original,26942,0.0,0.01
+PALMIRA,O3,diff_1,26941,0.0,0.1
+ACOPI,O3,original,19283,0.0,0.01
+ACOPI,O3,diff_1,19282,0.0,0.1
+MOVIL,O3,original,16555,0.0,0.01
+MOVIL,O3,diff_1,16554,0.0,0.1
+ACOPI,SO2,original,14350,0.0,0.01
+ACOPI,SO2,diff_1,14349,0.0,0.1
+COMPARTIR,O3,original,8872,0.0,0.01
+COMPARTIR,O3,diff_1,8871,0.0,0.1
+ERA OBRERO,O3,original,8808,0.0,0.01
+ERA OBRERO,O3,diff_1,8807,0.0,0.1

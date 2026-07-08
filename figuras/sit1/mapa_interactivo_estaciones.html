@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2bb8288273683b343b5abd993446ce1d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position:fixed;bottom:30px;left:30px;z-index:1000;background:white;padding:10px;border:1px solid grey;border-radius:5px">
+<b>Fuentes</b><br>
+<span style="color:#ff7f0e">&#9679;</span> DAGMA portal (2010-2019)<br>
+<span style="color:#1f77b4">&#9679;</span> SISAIRE (2020-2024)<br>
+<span style="color:#9467bd">&#9679;</span> S5P pseudo-truth NO2<br>
+<span style="color:red">&#9633;</span> BBox estudio PDF
+</div>
+    
+            <div class="folium-map" id="map_2bb8288273683b343b5abd993446ce1d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2bb8288273683b343b5abd993446ce1d = L.map(
+                "map_2bb8288273683b343b5abd993446ce1d",
+                {
+                    center: [3.43, -76.52],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cd8e07c3433d4f196936301c45c0c626 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_cd8e07c3433d4f196936301c45c0c626.addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var rectangle_356505b9a815a7a06e9004eb27763f86 = L.rectangle(
+                [[3.3, -76.6], [3.55, -76.4]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            rectangle_356505b9a815a7a06e9004eb27763f86.bindTooltip(
+                `<div>
+                     BBox estudio (PDF)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_127a0654794b719d56d36f11d0e29075 = L.circleMarker(
+                [3.501678, -76.507554],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_da36bd8b140af2c4c45fe5e42f9a56b0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_86f1bf7c49d5fe1dab4426be9fccd81e = $(`<div id="html_86f1bf7c49d5fe1dab4426be9fccd81e" style="width: 100.0%; height: 100.0%;">     <b>ACOPI</b><br>     Lat: 3.50168 | Lon: -76.50755<br>     Contaminantes: NO2+O3+SO2<br>     Fuentes: S5P_pseudo, SISAIRE<br>     Observaciones validas: 42,033     </div>`)[0];
+                popup_da36bd8b140af2c4c45fe5e42f9a56b0.setContent(html_86f1bf7c49d5fe1dab4426be9fccd81e);
+            
+        
+
+        circle_marker_127a0654794b719d56d36f11d0e29075.bindPopup(popup_da36bd8b140af2c4c45fe5e42f9a56b0)
+        ;
+
+        
+    
+    
+            circle_marker_127a0654794b719d56d36f11d0e29075.bindTooltip(
+                `<div>
+                     ACOPI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d3ff9873af7561417b84b8f83d0b5252 = L.marker(
+                [3.501678, -76.507554],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_c98a5d85b0b07a4bd7df18e2cbb13ba8 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eACOPI\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_d3ff9873af7561417b84b8f83d0b5252.setIcon(div_icon_c98a5d85b0b07a4bd7df18e2cbb13ba8);
+            
+    
+            var circle_marker_ef15f7b48c8dec0f9397df83c8ad95cc = L.circleMarker(
+                [3.457128, -76.502303],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_1f5519a1bd4a82576e54d14d64517e9c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fd47ff662a3cacfe42461846cbdde6c6 = $(`<div id="html_fd47ff662a3cacfe42461846cbdde6c6" style="width: 100.0%; height: 100.0%;">     <b>BASE AÉREA</b><br>     Lat: 3.45713 | Lon: -76.50230<br>     Contaminantes: O3+SO2<br>     Fuentes: SISAIRE<br>     Observaciones validas: 14,373     </div>`)[0];
+                popup_1f5519a1bd4a82576e54d14d64517e9c.setContent(html_fd47ff662a3cacfe42461846cbdde6c6);
+            
+        
+
+        circle_marker_ef15f7b48c8dec0f9397df83c8ad95cc.bindPopup(popup_1f5519a1bd4a82576e54d14d64517e9c)
+        ;
+
+        
+    
+    
+            circle_marker_ef15f7b48c8dec0f9397df83c8ad95cc.bindTooltip(
+                `<div>
+                     BASE AÉREA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1a53f0a56d58dd3fd749abdd4173c72a = L.marker(
+                [3.457128, -76.502303],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_b2a32c10cd279ea2151a295543b773d9 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eBASE A\u00c9REA\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_1a53f0a56d58dd3fd749abdd4173c72a.setIcon(div_icon_b2a32c10cd279ea2151a295543b773d9);
+            
+    
+            var circle_marker_dd7a4743f90c1dd4339c78271288f9a9 = L.circleMarker(
+                [3.4429, -76.5222],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9467bd", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_2cad7c5b0f77b4e3e1ad667365e50a68 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9d914c882ee83aadd5d8b6f68afb5671 = $(`<div id="html_9d914c882ee83aadd5d8b6f68afb5671" style="width: 100.0%; height: 100.0%;">     <b>BASE_AEREA</b><br>     Lat: 3.44290 | Lon: -76.52220<br>     Contaminantes: NO2<br>     Fuentes: S5P_pseudo<br>     Observaciones validas: 734     </div>`)[0];
+                popup_2cad7c5b0f77b4e3e1ad667365e50a68.setContent(html_9d914c882ee83aadd5d8b6f68afb5671);
+            
+        
+
+        circle_marker_dd7a4743f90c1dd4339c78271288f9a9.bindPopup(popup_2cad7c5b0f77b4e3e1ad667365e50a68)
+        ;
+
+        
+    
+    
+            circle_marker_dd7a4743f90c1dd4339c78271288f9a9.bindTooltip(
+                `<div>
+                     BASE_AEREA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b1bb8edbebe6f3ed177288f64aea8650 = L.marker(
+                [3.4429, -76.5222],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_c2309a181e725925b7433a4a6e3ca44c = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eBASE AEREA\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_b1bb8edbebe6f3ed177288f64aea8650.setIcon(div_icon_c2309a181e725925b7433a4a6e3ca44c);
+            
+    
+            var circle_marker_da7f043191a667377696c630ea6ceced = L.circleMarker(
+                [3.43, -76.54],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9467bd", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_481c0eb5a05e9ddf8158e8c7b1f095a2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b9e3aa7939cba5dbff638c1af5c16ff4 = $(`<div id="html_b9e3aa7939cba5dbff638c1af5c16ff4" style="width: 100.0%; height: 100.0%;">     <b>CANAVERALEJO</b><br>     Lat: 3.43000 | Lon: -76.54000<br>     Contaminantes: NO2<br>     Fuentes: S5P_pseudo<br>     Observaciones validas: 672     </div>`)[0];
+                popup_481c0eb5a05e9ddf8158e8c7b1f095a2.setContent(html_b9e3aa7939cba5dbff638c1af5c16ff4);
+            
+        
+
+        circle_marker_da7f043191a667377696c630ea6ceced.bindPopup(popup_481c0eb5a05e9ddf8158e8c7b1f095a2)
+        ;
+
+        
+    
+    
+            circle_marker_da7f043191a667377696c630ea6ceced.bindTooltip(
+                `<div>
+                     CANAVERALEJO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cb3d26f7a82021b8415ed6f4c65dbabc = L.marker(
+                [3.43, -76.54],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_27dd704d091a9f6ac901505910595840 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eCANAVERALEJO\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_cb3d26f7a82021b8415ed6f4c65dbabc.setIcon(div_icon_27dd704d091a9f6ac901505910595840);
+            
+    
+            var circle_marker_cfbff55c78c1a3f768a6da4d304fa506 = L.circleMarker(
+                [3.416366, -76.549613],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_460adc59793e8ba66af2b983cf6ffdd2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0d77cb5f5b8bfb9fdc8796626a9d6bb1 = $(`<div id="html_0d77cb5f5b8bfb9fdc8796626a9d6bb1" style="width: 100.0%; height: 100.0%;">     <b>CAÑAVERALEJO</b><br>     Lat: 3.41637 | Lon: -76.54961<br>     Contaminantes: SO2<br>     Fuentes: DAGMA_portal, SISAIRE<br>     Observaciones validas: 19,002     </div>`)[0];
+                popup_460adc59793e8ba66af2b983cf6ffdd2.setContent(html_0d77cb5f5b8bfb9fdc8796626a9d6bb1);
+            
+        
+
+        circle_marker_cfbff55c78c1a3f768a6da4d304fa506.bindPopup(popup_460adc59793e8ba66af2b983cf6ffdd2)
+        ;
+
+        
+    
+    
+            circle_marker_cfbff55c78c1a3f768a6da4d304fa506.bindTooltip(
+                `<div>
+                     CAÑAVERALEJO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f542d6853bf358dab21773e2c11ab8b3 = L.marker(
+                [3.416366, -76.549613],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_fbe197e19bd3826db01794d86d5ddaef = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eCA\u00d1AVERALEJO\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_f542d6853bf358dab21773e2c11ab8b3.setIcon(div_icon_fbe197e19bd3826db01794d86d5ddaef);
+            
+    
+            var circle_marker_d6e2989a839098d9f7d9c7ca6708a550 = L.circleMarker(
+                [3.368, -76.548],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_d639775903dfb03c360a153f74118fa0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f15e70a58c026a308f68b49ad554f5ac = $(`<div id="html_f15e70a58c026a308f68b49ad554f5ac" style="width: 100.0%; height: 100.0%;">     <b>COMPARTIR</b><br>     Lat: 3.36800 | Lon: -76.54800<br>     Contaminantes: NO2+O3<br>     Fuentes: S5P_pseudo, DAGMA_portal, SISAIRE<br>     Observaciones validas: 42,861     </div>`)[0];
+                popup_d639775903dfb03c360a153f74118fa0.setContent(html_f15e70a58c026a308f68b49ad554f5ac);
+            
+        
+
+        circle_marker_d6e2989a839098d9f7d9c7ca6708a550.bindPopup(popup_d639775903dfb03c360a153f74118fa0)
+        ;
+
+        
+    
+    
+            circle_marker_d6e2989a839098d9f7d9c7ca6708a550.bindTooltip(
+                `<div>
+                     COMPARTIR
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d3790f79852adfe6afe04d0a0e636b49 = L.marker(
+                [3.368, -76.548],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_7db303382ae4218e6ddb9a35384e3691 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eCOMPARTIR\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_d3790f79852adfe6afe04d0a0e636b49.setIcon(div_icon_7db303382ae4218e6ddb9a35384e3691);
+            
+    
+            var circle_marker_5229ecdde286b8aefd505b6a4f7b3455 = L.circleMarker(
+                [3.457317, -76.506539],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_2bff9830302051a8bd49da32dab9ef17 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1e7892e6fcdf660152a00eb3bcd82a4f = $(`<div id="html_1e7892e6fcdf660152a00eb3bcd82a4f" style="width: 100.0%; height: 100.0%;">     <b>ERA OBRERO</b><br>     Lat: 3.45732 | Lon: -76.50654<br>     Contaminantes: O3<br>     Fuentes: SISAIRE<br>     Observaciones validas: 8,808     </div>`)[0];
+                popup_2bff9830302051a8bd49da32dab9ef17.setContent(html_1e7892e6fcdf660152a00eb3bcd82a4f);
+            
+        
+
+        circle_marker_5229ecdde286b8aefd505b6a4f7b3455.bindPopup(popup_2bff9830302051a8bd49da32dab9ef17)
+        ;
+
+        
+    
+    
+            circle_marker_5229ecdde286b8aefd505b6a4f7b3455.bindTooltip(
+                `<div>
+                     ERA OBRERO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_dd61e32cefecb29aa7f2fb6f072421a3 = L.marker(
+                [3.457317, -76.506539],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_24eb6677d2bcfaa3e36a2c1b3a8e2d4d = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eERA OBRERO\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_dd61e32cefecb29aa7f2fb6f072421a3.setIcon(div_icon_24eb6677d2bcfaa3e36a2c1b3a8e2d4d);
+            
+    
+            var circle_marker_7c467db09f97435babb09ea36ec90ab3 = L.circleMarker(
+                [3.461, -76.521],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9467bd", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_90748d2c7fa26a7d29efb4649ee9b79e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_28a92aab330d09ff0357d01a1b0a9e13 = $(`<div id="html_28a92aab330d09ff0357d01a1b0a9e13" style="width: 100.0%; height: 100.0%;">     <b>ERA_OBRERO</b><br>     Lat: 3.46100 | Lon: -76.52100<br>     Contaminantes: NO2<br>     Fuentes: S5P_pseudo<br>     Observaciones validas: 719     </div>`)[0];
+                popup_90748d2c7fa26a7d29efb4649ee9b79e.setContent(html_28a92aab330d09ff0357d01a1b0a9e13);
+            
+        
+
+        circle_marker_7c467db09f97435babb09ea36ec90ab3.bindPopup(popup_90748d2c7fa26a7d29efb4649ee9b79e)
+        ;
+
+        
+    
+    
+            circle_marker_7c467db09f97435babb09ea36ec90ab3.bindTooltip(
+                `<div>
+                     ERA_OBRERO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2fcf04499414907d1d1ce7d712e1e9f9 = L.marker(
+                [3.461, -76.521],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_bfc4aefcd560e082d30af7aa213bca89 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eERA OBRERO\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_2fcf04499414907d1d1ce7d712e1e9f9.setIcon(div_icon_bfc4aefcd560e082d30af7aa213bca89);
+            
+    
+            var circle_marker_d01156c505320cc08edec57c52280793 = L.circleMarker(
+                [3.457317, -76.506539],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_21baf4231bc836fa386a68c1f93895b8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_897ef13d19ccd0044b91ca5f65f5b10f = $(`<div id="html_897ef13d19ccd0044b91ca5f65f5b10f" style="width: 100.0%; height: 100.0%;">     <b>ESCUELA_ARGENTINA</b><br>     Lat: 3.45732 | Lon: -76.50654<br>     Contaminantes: NO2+O3+SO2<br>     Fuentes: DAGMA_portal<br>     Observaciones validas: 52,760     </div>`)[0];
+                popup_21baf4231bc836fa386a68c1f93895b8.setContent(html_897ef13d19ccd0044b91ca5f65f5b10f);
+            
+        
+
+        circle_marker_d01156c505320cc08edec57c52280793.bindPopup(popup_21baf4231bc836fa386a68c1f93895b8)
+        ;
+
+        
+    
+    
+            circle_marker_d01156c505320cc08edec57c52280793.bindTooltip(
+                `<div>
+                     ESCUELA_ARGENTINA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_adf3ab3acd604b5bb215eceabdb69d5e = L.marker(
+                [3.457317, -76.506539],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_92958b13b89efa7e51724ec92861825e = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eESCUELA ARGENTINA\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_adf3ab3acd604b5bb215eceabdb69d5e.setIcon(div_icon_92958b13b89efa7e51724ec92861825e);
+            
+    
+            var circle_marker_7117f27335ce46170fd866277ca7d680 = L.circleMarker(
+                [3.455514, -76.530978],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_bc7a7361ab4c3940fbb1021f99bfb73b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8b1d242ce7f6b64970a7042fab6ac6a2 = $(`<div id="html_8b1d242ce7f6b64970a7042fab6ac6a2" style="width: 100.0%; height: 100.0%;">     <b>LA ERMITA</b><br>     Lat: 3.45551 | Lon: -76.53098<br>     Contaminantes: SO2<br>     Fuentes: SISAIRE<br>     Observaciones validas: 8,468     </div>`)[0];
+                popup_bc7a7361ab4c3940fbb1021f99bfb73b.setContent(html_8b1d242ce7f6b64970a7042fab6ac6a2);
+            
+        
+
+        circle_marker_7117f27335ce46170fd866277ca7d680.bindPopup(popup_bc7a7361ab4c3940fbb1021f99bfb73b)
+        ;
+
+        
+    
+    
+            circle_marker_7117f27335ce46170fd866277ca7d680.bindTooltip(
+                `<div>
+                     LA ERMITA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1c890bce4541c942dbd4544f75bf005c = L.marker(
+                [3.455514, -76.530978],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_e163da338f6f205a4031393b17399f85 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eLA ERMITA\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_1c890bce4541c942dbd4544f75bf005c.setIcon(div_icon_e163da338f6f205a4031393b17399f85);
+            
+    
+            var circle_marker_a84b18c204850f2422a0c67af50c1d3c = L.circleMarker(
+                [3.488218, -76.518058],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_b55acf21e53ac059d202548f59ff519d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_51fc00dc6a685666b32c40943ac324fe = $(`<div id="html_51fc00dc6a685666b32c40943ac324fe" style="width: 100.0%; height: 100.0%;">     <b>LA FLORA</b><br>     Lat: 3.48822 | Lon: -76.51806<br>     Contaminantes: O3+SO2<br>     Fuentes: SISAIRE<br>     Observaciones validas: 12,242     </div>`)[0];
+                popup_b55acf21e53ac059d202548f59ff519d.setContent(html_51fc00dc6a685666b32c40943ac324fe);
+            
+        
+
+        circle_marker_a84b18c204850f2422a0c67af50c1d3c.bindPopup(popup_b55acf21e53ac059d202548f59ff519d)
+        ;
+
+        
+    
+    
+            circle_marker_a84b18c204850f2422a0c67af50c1d3c.bindTooltip(
+                `<div>
+                     LA FLORA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7b5b4045f73c936adf21728e409ebb8f = L.marker(
+                [3.488218, -76.518058],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_d8bade380dd0e538c7e99259c0f8e65a = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eLA FLORA\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_7b5b4045f73c936adf21728e409ebb8f.setIcon(div_icon_d8bade380dd0e538c7e99259c0f8e65a);
+            
+    
+            var circle_marker_7088b98b649a6d335f5b6438c902dc0a = L.circleMarker(
+                [3.443, -76.535],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_fc6b88ce6ef9ca947bfed1d4035cdf5a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c7f1ba505d695ac46ae134951f157d77 = $(`<div id="html_c7f1ba505d695ac46ae134951f157d77" style="width: 100.0%; height: 100.0%;">     <b>LA_ERMITA</b><br>     Lat: 3.44300 | Lon: -76.53500<br>     Contaminantes: NO2+SO2<br>     Fuentes: S5P_pseudo, DAGMA_portal<br>     Observaciones validas: 21,865     </div>`)[0];
+                popup_fc6b88ce6ef9ca947bfed1d4035cdf5a.setContent(html_c7f1ba505d695ac46ae134951f157d77);
+            
+        
+
+        circle_marker_7088b98b649a6d335f5b6438c902dc0a.bindPopup(popup_fc6b88ce6ef9ca947bfed1d4035cdf5a)
+        ;
+
+        
+    
+    
+            circle_marker_7088b98b649a6d335f5b6438c902dc0a.bindTooltip(
+                `<div>
+                     LA_ERMITA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_14ee56dcc844923b723511e7ae776cd6 = L.marker(
+                [3.443, -76.535],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_1c33c76d73cbde7194697df126b07581 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eLA ERMITA\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_14ee56dcc844923b723511e7ae776cd6.setIcon(div_icon_1c33c76d73cbde7194697df126b07581);
+            
+    
+            var circle_marker_c864d7280ef809bb144cbd23cdd24cea = L.circleMarker(
+                [3.488218, -76.518058],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_0970973407ddd86dfdecfd16ef8c4f71 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d9a5e4a11fbeb6d15f882e9151a45125 = $(`<div id="html_d9a5e4a11fbeb6d15f882e9151a45125" style="width: 100.0%; height: 100.0%;">     <b>LA_FLORA</b><br>     Lat: 3.48822 | Lon: -76.51806<br>     Contaminantes: NO2+O3+SO2<br>     Fuentes: DAGMA_portal, S5P_pseudo<br>     Observaciones validas: 67,620     </div>`)[0];
+                popup_0970973407ddd86dfdecfd16ef8c4f71.setContent(html_d9a5e4a11fbeb6d15f882e9151a45125);
+            
+        
+
+        circle_marker_c864d7280ef809bb144cbd23cdd24cea.bindPopup(popup_0970973407ddd86dfdecfd16ef8c4f71)
+        ;
+
+        
+    
+    
+            circle_marker_c864d7280ef809bb144cbd23cdd24cea.bindTooltip(
+                `<div>
+                     LA_FLORA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2d3e4f530acecba7d1ef87fdbb85d322 = L.marker(
+                [3.488218, -76.518058],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_8809812d9f5fa19ca22c49467e9bc77c = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eLA FLORA\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_2d3e4f530acecba7d1ef87fdbb85d322.setIcon(div_icon_8809812d9f5fa19ca22c49467e9bc77c);
+            
+    
+            var circle_marker_133bb3cfe3b5783bb06a6c3b70218afb = L.circleMarker(
+                [3.4532, -76.5318],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_0b03feff8403d9e140e840e5493d344d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_154a1013839d2a306f1ce4a051aadfca = $(`<div id="html_154a1013839d2a306f1ce4a051aadfca" style="width: 100.0%; height: 100.0%;">     <b>MOVIL</b><br>     Lat: 3.45320 | Lon: -76.53180<br>     Contaminantes: NO2+O3+SO2<br>     Fuentes: S5P_pseudo, SISAIRE<br>     Observaciones validas: 29,769     </div>`)[0];
+                popup_0b03feff8403d9e140e840e5493d344d.setContent(html_154a1013839d2a306f1ce4a051aadfca);
+            
+        
+
+        circle_marker_133bb3cfe3b5783bb06a6c3b70218afb.bindPopup(popup_0b03feff8403d9e140e840e5493d344d)
+        ;
+
+        
+    
+    
+            circle_marker_133bb3cfe3b5783bb06a6c3b70218afb.bindTooltip(
+                `<div>
+                     MOVIL
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_fb3e494ae076456973a5cea371b41586 = L.marker(
+                [3.4532, -76.5318],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_2bfebb11229109de3ff691d8791be06b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eMOVIL\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_fb3e494ae076456973a5cea371b41586.setIcon(div_icon_2bfebb11229109de3ff691d8791be06b);
+            
+    
+            var circle_marker_37aac26de3480ac999bf5b157bc6ec58 = L.circleMarker(
+                [3.364, -76.56],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_1f4aa911a8ad8a309f034df355e955f2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b021408a5fd87300abb3345d5f82de26 = $(`<div id="html_b021408a5fd87300abb3345d5f82de26" style="width: 100.0%; height: 100.0%;">     <b>PANCE</b><br>     Lat: 3.36400 | Lon: -76.56000<br>     Contaminantes: NO2+O3<br>     Fuentes: S5P_pseudo, DAGMA_portal, SISAIRE<br>     Observaciones validas: 43,566     </div>`)[0];
+                popup_1f4aa911a8ad8a309f034df355e955f2.setContent(html_b021408a5fd87300abb3345d5f82de26);
+            
+        
+
+        circle_marker_37aac26de3480ac999bf5b157bc6ec58.bindPopup(popup_1f4aa911a8ad8a309f034df355e955f2)
+        ;
+
+        
+    
+    
+            circle_marker_37aac26de3480ac999bf5b157bc6ec58.bindTooltip(
+                `<div>
+                     PANCE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_78242613381415a3850312ee780058f6 = L.marker(
+                [3.364, -76.56],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_3cc55a11d0815bfb8af70e3fa701b0bb = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003ePANCE\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_78242613381415a3850312ee780058f6.setIcon(div_icon_3cc55a11d0815bfb8af70e3fa701b0bb);
+            
+    
+            var circle_marker_f6fbb320d14fbb40ac9cd426151bf6f0 = L.circleMarker(
+                [3.417183, -76.49496],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_4c8ff85b4f8e0ef3e86de3c225dcbf47 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_658acac7db6dee7c99dc8f61f3765586 = $(`<div id="html_658acac7db6dee7c99dc8f61f3765586" style="width: 100.0%; height: 100.0%;">     <b>TRANSITORIA-NAVARRO</b><br>     Lat: 3.41718 | Lon: -76.49496<br>     Contaminantes: O3+SO2<br>     Fuentes: SISAIRE<br>     Observaciones validas: 8,630     </div>`)[0];
+                popup_4c8ff85b4f8e0ef3e86de3c225dcbf47.setContent(html_658acac7db6dee7c99dc8f61f3765586);
+            
+        
+
+        circle_marker_f6fbb320d14fbb40ac9cd426151bf6f0.bindPopup(popup_4c8ff85b4f8e0ef3e86de3c225dcbf47)
+        ;
+
+        
+    
+    
+            circle_marker_f6fbb320d14fbb40ac9cd426151bf6f0.bindTooltip(
+                `<div>
+                     TRANSITORIA-NAVARRO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c7b71393c432f896c9ac89176135a106 = L.marker(
+                [3.417183, -76.49496],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_d32ace4c0e1525e4dc560e9e5ef9e64d = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eTRANSITORIA-NAVARRO\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_c7b71393c432f896c9ac89176135a106.setIcon(div_icon_d32ace4c0e1525e4dc560e9e5ef9e64d);
+            
+    
+            var circle_marker_25e5a049bb896b86438bd77b562cd544 = L.circleMarker(
+                [3.389, -76.51],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9467bd", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_3c198d8188f5ded743f63728c553ea65 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_eb59896a8c0384a965b8eb333a866a3e = $(`<div id="html_eb59896a8c0384a965b8eb333a866a3e" style="width: 100.0%; height: 100.0%;">     <b>TRANSITORIA_NAVARRO</b><br>     Lat: 3.38900 | Lon: -76.51000<br>     Contaminantes: NO2<br>     Fuentes: S5P_pseudo<br>     Observaciones validas: 794     </div>`)[0];
+                popup_3c198d8188f5ded743f63728c553ea65.setContent(html_eb59896a8c0384a965b8eb333a866a3e);
+            
+        
+
+        circle_marker_25e5a049bb896b86438bd77b562cd544.bindPopup(popup_3c198d8188f5ded743f63728c553ea65)
+        ;
+
+        
+    
+    
+            circle_marker_25e5a049bb896b86438bd77b562cd544.bindTooltip(
+                `<div>
+                     TRANSITORIA_NAVARRO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_db1b5789c9ac4aa3c74159f4120a5d4e = L.marker(
+                [3.389, -76.51],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_54579cd2d847f7c6afc161639d419380 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eTRANSITORIA NAVARRO\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_db1b5789c9ac4aa3c74159f4120a5d4e.setIcon(div_icon_54579cd2d847f7c6afc161639d419380);
+            
+    
+            var circle_marker_e2846f7d6548342f6de7898db7e8ab3e = L.circleMarker(
+                [3.377911, -76.533811],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_12a635294747b728fb6baa447c60d3b9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_55cf5822c2878ca3925311cab40efbe6 = $(`<div id="html_55cf5822c2878ca3925311cab40efbe6" style="width: 100.0%; height: 100.0%;">     <b>UNIVALLE</b><br>     Lat: 3.37791 | Lon: -76.53381<br>     Contaminantes: NO2+O3<br>     Fuentes: DAGMA_portal<br>     Observaciones validas: 87,339     </div>`)[0];
+                popup_12a635294747b728fb6baa447c60d3b9.setContent(html_55cf5822c2878ca3925311cab40efbe6);
+            
+        
+
+        circle_marker_e2846f7d6548342f6de7898db7e8ab3e.bindPopup(popup_12a635294747b728fb6baa447c60d3b9)
+        ;
+
+        
+    
+    
+            circle_marker_e2846f7d6548342f6de7898db7e8ab3e.bindTooltip(
+                `<div>
+                     UNIVALLE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4f3e191eaa33a9e379d51ef173e58c3e = L.marker(
+                [3.377911, -76.533811],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_3f12d965ab1607ed7cdd6ef2d2713b34 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eUNIVALLE\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_4f3e191eaa33a9e379d51ef173e58c3e.setIcon(div_icon_3f12d965ab1607ed7cdd6ef2d2713b34);
+            
+    
+            var circle_marker_b155925430ec5bc714a311a202db1c2e = L.circleMarker(
+                [3.377911, -76.533811],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_18cd8b420823693102299d622e35e819 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0a4696c7f8d7e3746e78763ef73f8370 = $(`<div id="html_0a4696c7f8d7e3746e78763ef73f8370" style="width: 100.0%; height: 100.0%;">     <b>UNIVERSIDAD DEL VALLE</b><br>     Lat: 3.37791 | Lon: -76.53381<br>     Contaminantes: O3<br>     Fuentes: SISAIRE<br>     Observaciones validas: 6,843     </div>`)[0];
+                popup_18cd8b420823693102299d622e35e819.setContent(html_0a4696c7f8d7e3746e78763ef73f8370);
+            
+        
+
+        circle_marker_b155925430ec5bc714a311a202db1c2e.bindPopup(popup_18cd8b420823693102299d622e35e819)
+        ;
+
+        
+    
+    
+            circle_marker_b155925430ec5bc714a311a202db1c2e.bindTooltip(
+                `<div>
+                     UNIVERSIDAD DEL VALLE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c25d7b6e81e6ccb4edb73363874e3c3c = L.marker(
+                [3.377911, -76.533811],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_b8fde60b534a866e04e5401da68cb3d1 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eUNIVERSIDAD DEL VALLE\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_c25d7b6e81e6ccb4edb73363874e3c3c.setIcon(div_icon_b8fde60b534a866e04e5401da68cb3d1);
+            
+    
+            var circle_marker_0da46d93e6ccf792be8782d219af876f = L.circleMarker(
+                [3.374, -76.535],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9467bd", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+        var popup_1dd023e93664c588cc32de15dc67f536 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b4df85e5fc0ffef45f37a82c91ee112f = $(`<div id="html_b4df85e5fc0ffef45f37a82c91ee112f" style="width: 100.0%; height: 100.0%;">     <b>UNIVERSIDAD_DEL_VALLE</b><br>     Lat: 3.37400 | Lon: -76.53500<br>     Contaminantes: NO2<br>     Fuentes: S5P_pseudo<br>     Observaciones validas: 756     </div>`)[0];
+                popup_1dd023e93664c588cc32de15dc67f536.setContent(html_b4df85e5fc0ffef45f37a82c91ee112f);
+            
+        
+
+        circle_marker_0da46d93e6ccf792be8782d219af876f.bindPopup(popup_1dd023e93664c588cc32de15dc67f536)
+        ;
+
+        
+    
+    
+            circle_marker_0da46d93e6ccf792be8782d219af876f.bindTooltip(
+                `<div>
+                     UNIVERSIDAD_DEL_VALLE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_829d36057ce3f0854a366c039ef1e5d0 = L.marker(
+                [3.374, -76.535],
+                {
+}
+            ).addTo(map_2bb8288273683b343b5abd993446ce1d);
+        
+    
+            var div_icon_0f036d206d39b8144e50924588bd1ff8 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:8px;font-weight:bold;color:#111;white-space:nowrap\"\u003eUNIVERSIDAD DEL VALLE\u003c/div\u003e",
+  "iconSize": [120, 20],
+  "iconAnchor": [0, -5],
+  "className": "empty",
+});
+        
+    
+                marker_829d36057ce3f0854a366c039ef1e5d0.setIcon(div_icon_0f036d206d39b8144e50924588bd1ff8);
+            
+</script>
+</html>

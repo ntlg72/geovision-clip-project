@@ -1,0 +1,3 @@
+contaminante,n_estaciones,k_vecinos,moran_I,p_sim,z_sim,n_HH_sig,n_LL_sig,n_HL_sig,n_LH_sig
+SO2,8,4,-0.1843,0.365,-0.421,0,0,0,1
+O3,10,4,-0.3608,0.003,-2.064,0,0,1,0

@@ -1,0 +1,117 @@
+{
+  "version": "2.0.0",
+  "created_at": "2026-05-18T16:49:56.558106Z",
+  "description": "Panel horario unificado de calidad del aire Cali BBox. Nombres canónicos, coords SISAIRE autoritativas.",
+  "bbox": {
+    "lon_min": -76.6,
+    "lon_max": -76.4,
+    "lat_min": 3.3,
+    "lat_max": 3.55
+  },
+  "fuentes": {
+    "SISAIRE": "Red oficial IDEAM, 2018-2024, NO2/O3/SO2",
+    "DAGMA_portal": "Red municipal Cali, 2010-2019, NO2/O3/SO2",
+    "S5P_pseudo": "Sentinel-5P TROPOMI calibrado Theil-Sen (no2_surface = 5.28 + 46948 × col_mol_m2)"
+  },
+  "schema": {
+    "estacion": "str  — nombre canónico UPPER_SNAKE_CASE",
+    "fecha": "datetime64[ns]  — marca horaria UTC",
+    "latitud": "float64  — grados decimales WGS-84, autoritativa de SISAIRE para estaciones compartidas",
+    "longitud": "float64  — grados decimales WGS-84",
+    "valor": "float64  — concentración µg/m³ (SISAIRE/DAGMA) o NO2 superficie µg/m³ (S5P)",
+    "fuente": "str  — SISAIRE | DAGMA_portal | S5P_pseudo",
+    "contaminante": "str  — NO2 | O3 | SO2"
+  },
+  "estaciones_canonicas": [
+    "ACOPI",
+    "BASE_AEREA",
+    "CANAVERALEJO",
+    "COMPARTIR",
+    "ERA_OBRERO",
+    "ESCUELA_ARGENTINA",
+    "LA_ERMITA",
+    "LA_FLORA",
+    "PANCE",
+    "TRANSITORIA_NAVARRO",
+    "UNIVERSIDAD_DEL_VALLE"
+  ],
+  "coordenadas_sisaire": {
+    "ACOPI": {
+      "latitud": 3.501678,
+      "longitud": -76.507554
+    },
+    "BASE_AEREA": {
+      "latitud": 3.457128,
+      "longitud": -76.502303
+    },
+    "CANAVERALEJO": {
+      "latitud": 3.416366,
+      "longitud": -76.549613
+    },
+    "COMPARTIR": {
+      "latitud": 3.42826,
+      "longitud": -76.466584
+    },
+    "ERA_OBRERO": {
+      "latitud": 3.457317,
+      "longitud": -76.506539
+    },
+    "LA_ERMITA": {
+      "latitud": 3.455514,
+      "longitud": -76.530978
+    },
+    "LA_FLORA": {
+      "latitud": 3.488218,
+      "longitud": -76.518058
+    },
+    "PANCE": {
+      "latitud": 3.304517,
+      "longitud": -76.531252
+    },
+    "TRANSITORIA_NAVARRO": {
+      "latitud": 3.417183,
+      "longitud": -76.49496
+    },
+    "UNIVERSIDAD_DEL_VALLE": {
+      "latitud": 3.377911,
+      "longitud": -76.533811
+    }
+  },
+  "stats": {
+    "n_rows": 1167079,
+    "n_estaciones": 11,
+    "fecha_min": "2010-01-28 00:00:00",
+    "fecha_max": "2024-12-31 23:00:00",
+    "pct_nulos": 62.29,
+    "md5_consolidado": "89560bb25842c8f0f4cc2e451a13f49c"
+  },
+  "uso_situacion2": {
+    "descripcion": "Interpolación espacial NO2. Usar fuente=SISAIRE|DAGMA_portal para ground-truth, S5P_pseudo como covariable.",
+    "filtro_recomendado": "contaminante=='NO2' & valor.notna()",
+    "columnas_clave": [
+      "estacion",
+      "fecha",
+      "latitud",
+      "longitud",
+      "valor"
+    ]
+  },
+  "uso_situacion3": {
+    "descripcion": "Clasificación y predicción temporal. Panel completo o subset por contaminante.",
+    "filtro_recomendado": "valor.notna()",
+    "columnas_clave": [
+      "estacion",
+      "fecha",
+      "contaminante",
+      "valor",
+      "fuente"
+    ]
+  },
+  "archivos_gold": {
+    "ground_truth_consolidado.parquet": "Panel unificado principal",
+    "sisaire_horaria/": "SISAIRE particionado por contaminante (Hive)",
+    "dagma_portal_horaria/": "DAGMA particionado por contaminante (Hive)",
+    "no2_s5p_estaciones.parquet": "S5P pseudo-verdad NO2 por estación",
+    "manifest_gold.json": "Este archivo"
+  }
+}

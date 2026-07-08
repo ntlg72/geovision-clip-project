@@ -1,0 +1,84 @@
+{
+  "version": "silver-1.2",
+  "archivo": "no2_s5p_estaciones.parquet",
+  "md5": "2e89d2133a84d3202ad9290c06a36665",
+  "filas": 7922,
+  "columnas": [
+    "estacion",
+    "fecha",
+    "no2_columna_mol_m2",
+    "no2_estimado_sin_bias_ug_m3",
+    "bias_correction",
+    "no2_pseudo_ug_m3_corr",
+    "latitud",
+    "longitud",
+    "unidad_columna",
+    "unidad_estimado",
+    "calibracion_intercepto",
+    "calibracion_pendiente",
+    "calibracion_r2_global",
+    "calibracion_n_overlap",
+    "fuente",
+    "metodo",
+    "s3_key_s5p"
+  ],
+  "estaciones": [
+    "ACOPI",
+    "BASE_AEREA",
+    "CANAVERALEJO",
+    "COMPARTIR",
+    "ERA_OBRERO",
+    "LA_ERMITA",
+    "LA_FLORA",
+    "MOVIL",
+    "PANCE",
+    "TRANSITORIA_NAVARRO",
+    "UNIVERSIDAD_DEL_VALLE"
+  ],
+  "rango_temporal": [
+    "2020-01-01",
+    "2024-12-25"
+  ],
+  "calibracion": {
+    "metodo": "Theil-Sen",
+    "intercepto": 5.2798,
+    "pendiente": 46947.9,
+    "r2_ols": 0.0528,
+    "spearman_rho": 0.308,
+    "n_overlap_dias": 212
+  },
+  "bias_por_estacion": {
+    "ACOPI": 1.087,
+    "MOVIL": -0.8931
+  },
+  "cambio_v1.1_a_v1.2": "Coords ACOPI corregidas a (3.501678, -76.507554) segun GPS en campo",
+  "validacion_kpi_pdf": [
+    {
+      "estacion": "ACOPI",
+      "n": 122,
+      "RMSE": 4.65,
+      "MAE": 3.53,
+      "Bias": -0.74,
+      "Pearson_r": 0.45,
+      "KPI_PDF": "Cumple (<=8)"
+    },
+    {
+      "estacion": "MOVIL",
+      "n": 90,
+      "RMSE": 1.93,
+      "MAE": 1.53,
+      "Bias": -0.09,
+      "Pearson_r": 0.19,
+      "KPI_PDF": "Cumple (<=8)"
+    }
+  ],
+  "limitaciones": [
+    "Columna troposferica != concentracion superficie (R2=0.19)",
+    "4 estaciones centrales Cali en misma celda S5P (7 km resolucion)",
+    "Calibracion basada en 3 estaciones con in-situ NO2"
+  ],
+  "cambios": {
+    "filtro_palmira": "Estacion PALMIRA excluida (fuera de BBox PDF lon=-76.3088)"
+  },
+  "n_rows": 7922
+}

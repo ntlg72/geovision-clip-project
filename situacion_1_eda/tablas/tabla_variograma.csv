@@ -1,0 +1,7 @@
+contaminante,modelo,rmse,rango,sill,nugget
+SO2,spherical,6.1002,0.0073,9.0778,0.0
+SO2,exponential,6.1002,0.0014,9.0778,0.0
+SO2,gaussian,6.1002,0.0008,9.0778,0.0
+O3,spherical,15.0682,0.0322,19.7924,0.0
+O3,exponential,15.5426,0.0006,18.5167,0.0
+O3,gaussian,15.071,0.0316,19.9539,0.0

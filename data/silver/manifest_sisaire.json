@@ -1,0 +1,77 @@
+{
+  "dataset": "sisaire_horaria",
+  "version": "silver-1.0",
+  "fecha_generacion": "2026-05-15T14:50:52.941135+00:00",
+  "fuente_bronze": "s3://bronze.sat/IDEAM/",
+  "ruta_local": "silver/sisaire_horaria.parquet",
+  "particiones": [
+    "contaminante"
+  ],
+  "shape": [
+    456616,
+    26
+  ],
+  "rango_temporal": {
+    "min": "2020-01-01 00:00:00",
+    "max": "2024-12-31 23:00:00"
+  },
+  "md5": "d37ab4b045803cdc7470bddaccea70b7",
+  "tamano_mb": 6.23,
+  "schema": {
+    "fecha": "datetime64[us]",
+    "estacion_id": "float64",
+    "estacion": "str",
+    "autoridad": "str",
+    "msfl_code": "str",
+    "valor": "float64",
+    "med_fecha_final": "str",
+    "latitud": "float64",
+    "longitud": "float64",
+    "altitud": "int64",
+    "unidad": "str",
+    "duraci_n": "float64",
+    "municipio": "str",
+    "tipo_estacion": "str",
+    "municipio_dane": "str",
+    "contaminante": "str",
+    "s3_key": "str",
+    "in_bbox_actual": "object",
+    "in_bbox_propuesto": "object",
+    "post_s5p": "object",
+    "flag_fisico": "bool",
+    "flag_estadistico": "bool",
+    "flag_stuck": "bool",
+    "valor_limpio": "float64",
+    "valor_imputado": "float64",
+    "fue_imputado": "bool"
+  },
+  "estaciones_aceptadas": 21,
+  "estaciones_totales": 21,
+  "umbrales": {
+    "min_obs_validas": 100,
+    "min_dias_cobertura": 90,
+    "stuck_value_ventana": 12,
+    "hampel_n_sigmas": 4.0,
+    "hampel_ventana_h": 24,
+    "imputacion_gap_max_h": 6
+  },
+  "rangos_fisicos": {
+    "NO2": [
+      0,
+      500
+    ],
+    "SO2": [
+      0,
+      500
+    ],
+    "O3": [
+      0,
+      600
+    ]
+  },
+  "seed_reproducible": 42,
+  "cambios": {
+    "filtro_palmira": "Estacion PALMIRA excluida (fuera de BBox PDF lon=-76.3088)"
+  },
+  "n_rows": 382221
+}

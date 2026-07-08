@@ -1,0 +1,19 @@
+{
+  "dataset": "dagma_portal_horaria",
+  "version": "silver-1.1",
+  "fecha_generacion": "2026-05-14T21:39:54.465268+00:00",
+  "fuente_bronze": "s3://bronze.sat/DAGMA/",
+  "ruta_local": "silver/dagma_portal_horaria.parquet",
+  "shape": [
+    815110,
+    16
+  ],
+  "rango_temporal": {
+    "min": "2010-01-28 00:00:00",
+    "max": "2020-01-01 00:00:00"
+  },
+  "md5": "7e20724f37e8d68b2efd788bf686446a",
+  "estaciones_aceptadas": 12,
+  "estaciones_totales": 12,
+  "nota": "DAGMA portal no incluye estacion Yumbo/Acopi - solo estaciones de Cali"
+}

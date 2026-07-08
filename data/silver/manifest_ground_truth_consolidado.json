@@ -1,0 +1,75 @@
+{
+  "version": "silver-1.2",
+  "archivo": "ground_truth_consolidado.parquet",
+  "md5": "b4f3a998c01e654ab620df62e03201ef",
+  "filas": 1279648,
+  "columnas": [
+    "estacion",
+    "contaminante",
+    "fecha",
+    "latitud",
+    "longitud",
+    "valor",
+    "flag_fisico",
+    "flag_estadistico",
+    "flag_stuck",
+    "fuente"
+  ],
+  "fuentes": {
+    "SISAIRE": {
+      "filas": 456616,
+      "rango": [
+        "2020-01-01",
+        "2024-12-31"
+      ]
+    },
+    "DAGMA_portal": {
+      "filas": 815110,
+      "rango": [
+        "2010-01-28",
+        "2020-01-01"
+      ]
+    },
+    "Sentinel5P_L3_NO2": {
+      "filas": 7922,
+      "rango": [
+        "2020-01-01",
+        "2024-12-25"
+      ]
+    }
+  },
+  "estaciones": [
+    "ACOPI",
+    "BASE A\u00c9REA",
+    "BASE_AEREA",
+    "CANAVERALEJO",
+    "CA\u00d1AVERALEJO",
+    "COMPARTIR",
+    "ERA OBRERO",
+    "ERA_OBRERO",
+    "ESCUELA_ARGENTINA",
+    "LA ERMITA",
+    "LA FLORA",
+    "LA_ERMITA",
+    "LA_FLORA",
+    "MOVIL",
+    "PALMIRA",
+    "PANCE",
+    "TRANSITORIA-NAVARRO",
+    "TRANSITORIA_NAVARRO",
+    "UNIVALLE",
+    "UNIVERSIDAD DEL VALLE",
+    "UNIVERSIDAD_DEL_VALLE"
+  ],
+  "contaminantes": [
+    "NO2",
+    "NO2_S5P",
+    "O3",
+    "SO2"
+  ],
+  "cambio_v1.1_a_v1.2": "Coords ACOPI corregidas a (3.501678, -76.507554) segun GPS en campo. S5P NO2 re-extraido.",
+  "cambios": {
+    "filtro_palmira": "Estacion PALMIRA excluida (fuera de BBox PDF lon=-76.3088)"
+  },
+  "n_rows": 1205253
+}

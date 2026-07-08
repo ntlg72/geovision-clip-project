@@ -1,0 +1,24 @@
+contaminante,estacion,tendencia,p_valor,slope_ug_m3_yr,tau
+NO2,ACOPI,increasing,0.0133,9.776,0.486
+NO2,ESCUELA_ARGENTINA,no trend,0.4011,5.488,0.146
+NO2,LA_FLORA,no trend,0.6352,-0.398,-0.059
+NO2,MOVIL,increasing,0.0049,4.514,0.636
+NO2,UNIVALLE,decreasing,0.0,-0.859,-0.333
+SO2,ACOPI,increasing,0.0007,7.842,0.464
+SO2,BASE AÉREA,increasing,0.004,2.505,0.446
+SO2,CAÑAVERALEJO,decreasing,0.0,-0.657,-0.497
+SO2,ESCUELA_ARGENTINA,no trend,0.7614,-0.223,-0.047
+SO2,LA ERMITA,no trend,0.1502,-1.312,-0.225
+SO2,LA_ERMITA,decreasing,0.0,-1.029,-0.489
+SO2,LA_FLORA,increasing,0.0016,7.077,0.516
+O3,ACOPI,no trend,0.111,3.431,0.187
+O3,BASE AÉREA,increasing,0.0394,2.626,0.312
+O3,COMPARTIR,decreasing,0.0,-3.837,-0.513
+O3,ERA OBRERO,no trend,0.3145,2.179,0.168
+O3,ESCUELA_ARGENTINA,no trend,0.3822,-1.037,-0.097
+O3,LA FLORA,no trend,0.0912,4.567,0.309
+O3,LA_FLORA,no trend,0.7291,-0.2,-0.032
+O3,MOVIL,increasing,0.0168,1.552,0.323
+O3,PANCE,decreasing,0.0,-4.333,-0.467
+O3,UNIVALLE,decreasing,0.0,-2.148,-0.358
+O3,UNIVERSIDAD DEL VALLE,increasing,0.0043,7.88,0.42
